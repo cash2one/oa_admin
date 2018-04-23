@@ -1,0 +1,227 @@
+var apiAddress = {
+    admin: {
+        staticCodeUrl: '/admin/login/captcha'
+    },
+    login: {
+        login: '/admin/login/index',
+        signOut: '/admin/login/logout'
+    },
+    homePage: {
+        // 待审核列表
+        pending: '/admin/user/getNoCheckList',
+        // 待审核提交接口
+        agree: '/admin/user/checkUserAgree',
+        // 待审核不同意提交接口
+        disagree: '/admin/user/checkUserNo',
+        // 公告列表
+        noticeList: '/admin/notice/getList',
+        // 预览/编辑公告
+        noticePreview: '/admin/notice/getDetail',
+        // 删除公告
+        noticeDelect: '/admin/notice/deleteNotice',
+        // 编辑/发布公告
+        noticeAdd: '/admin/notice/editNotice',
+        // 首页月程列表
+        monthList: '/admin/calendar/getNewList'
+    },
+    user: {
+        // 用户列表
+        userList: '/admin/user/userList',
+        // 用户详情
+        userDetail: '/admin/user/getDetail',
+        // 职位列表
+        pname: '/admin/department/getPositList',
+        // 用户编辑提交
+        userSubmit: '/admin/user/editUser',
+        // 用户删除
+        userDelect: '/admin/user/deleteUser',
+        // 添加用户
+        userAdd: '/admin/user/addUser',
+        // 身份证上传识别
+        getCardId: '/admin/user/getId'
+    },
+    rights: {
+        roleList: '/admin/role/list',
+        roleDetails: '/admin/role/detail',
+        roleModify: '/admin/role/modify',
+        roleDel: '/admin/role/del',
+        list: '/admin/permission/list',
+        userList: '/admin/manage/list',
+        userDetails: '/admin/manage/detail',
+        userModify: '/admin/manage/modify',
+        userDel: '/admin/manage/del'
+    },
+    // 办公物品模块
+    goods: {
+        // 物品列表
+        list: '/admin/goods/list',
+        details: '/admin/goods/detail',
+        // 添加采购
+        purchase: '/admin/goods/purchase',
+        purchaselist: '/admin/goods/purchaselist',
+        editnum: '/admin/goods/editnum',
+        finish: '/admin/goods/finish',
+        purchaselogs: '/admin/goods/purchaselogs',
+        // 物品申请列表
+        applylist: '/admin/goods/applylist',
+        applyoper: '/admin/goods/applyoper',
+        applylogs: '/admin/goods/applylogs',
+        // 物品删除
+        del: '/admin/goods/deleteGoods'
+    },
+    // 行政管理模块
+    xzManagement: {
+        // 请假申请列表
+        leaveList: '/admin/apply/getLeaveApplyList',
+        leaveDetails: '/admin/apply/getLeaveDetail',
+        leaveDel: '/admin/apply/deleteLeave',
+        // 用车申请列表
+        carlist: '/admin/apply/getCarApplyList',
+        carDetails: '/admin/apply/getCarDetail',
+        carDel: '/admin/apply/deleteCar',
+        // 物品申请列表
+        goodApply: '/admin/apply/getGoodApplyList',
+        goodDel: '/admin/apply/deleteGood',
+        // 转正列表
+        zzApply: '/admin/apply/getPositiveApplyList',
+        passApply: '/admin/apply/passPositive',
+        deleteApply: '/admin/apply/deleteUser',
+        delayApply: '/admin/apply/delayUser'
+    },
+    // 财务管理模块
+    finance: {
+        // 报销申请列表
+        baoxiaoList: '/admin/apply/getReimbApplyList',
+        baoxiaoDetails: '/admin/apply/getReimDetail',
+        baoxiaoDel: '/admin/apply/deleteReim',
+        // 合同付款申请列表
+        contractList: '/admin/apply/getContractApplyList',
+        contractDetails: '/admin/apply/getContrDetail',
+        contractDel: '/admin/apply/deleteContr',
+        // 收款报备列表
+        baobeiLits: '/admin/apply/getProceedApplyList',
+        baobeiDetails: '/admin/apply/getProceedDetail',
+        baobeiDel: '/admin/apply/getProceedDelete',
+        // 备用资金申请列表
+        financeList: '/admin/apply/getReserveApplyList',
+        financeDetails: '/admin/apply/getReserveDetail',
+        financeDel: '/admin/apply/reserveDelete'
+    },
+    // 部门管理列表
+    depart: {
+        // 部门列表
+        departList: '/admin/department/getDepartList',
+        // 部门用户列表
+        departUserList: '/admin/depart/getUserList',
+        // 部门编辑
+        departEdit: '/admin/depart/editDepart',
+        // 部门删除
+        departDelect: '/admin/depart/deleteDepart',
+        // 部门添加职位：
+        departAddPos: '/admin/depart/addPos',
+        // 删除职位
+        deletePosition: '/admin/depart/deletePosition',
+        // 添加部门提交
+        departAdd: '/admin/depart/addDepart'
+    },
+    calendar: {
+        calendar: '/admin/calendar/getList',
+        eventAdd: '/admin/calendar/addEvent',
+        eventDel: '/admin/calendar/deleteEvent',
+        dayEventList: '/admin/calendar/getDayList'
+    },
+    // 客户列表
+    customer: {
+        customerList: '/admin/client/allList',
+        customerType: '/admin/client/classifyList',
+        customerTypeDetails: '/admin/client/classifyDetail',
+        customerTypeAdd: '/admin/client/classifyModify',
+        customerTypeDel: '/admin/client/classifyDel',
+        customerFollow: '/admin/client/follow',
+        customerTag: '/admin/client/labelList',
+        customerTagDetails: '/admin/client/labelClientlist',
+        customerDel: '/admin/client/delClient',
+        industryList: '/admin/trade/getList',
+        industryListAdd: '/admin/trade/addTrade',
+        industryListDel: '/admin/trade/deleteTrade',
+        industryListItem: '/admin/trade/getSonList',
+        industryGetDetails: '/admin/trade/getDetail',
+        customerStatistics: '/admin/client/clientStatistics'
+    },
+    plan: {
+        day: '/admin/plan/getDayList',
+        week: '/admin/plan/getWeekList',
+        weekOtherDetails: '/admin/plan/getAllUsersWeekOtherDetail',
+        month: '/admin/plan/getMonthList',
+        monthDetails: '/admin/plan/getAllUsersMonthDetail',
+        year: '/admin/plan/getYearList',
+        yearDetails: '/admin/plan/getAllUsersYearDetail',
+        // public
+        del: '/admin/plan/deleteAnyPlan',
+        summary: '/admin/plan/getAllUsersSummaryDetail',
+        delWeek: '/admin/plan/deleteCate'
+    },
+    clockIn: {
+        attendancelog: '/admin/punchCard/getPunchUsersList',
+        userMonthLog: '/admin/punchCard/getUserPunchList',
+        exportLog: '/admin/punchCard/export'
+    },
+    sign: {
+        list: '/admin/newsignlog/getPunchList',
+        remarks: '/admin/newsignlog/getRemark'
+    },
+    assessment: {
+        assessmentStageList: '/admin/assess/AssessList',
+        assessmentStageAdd: '/admin/assess/AssessAdd',
+        assessmentStageClearing: '/admin/assess/AssessClearing',
+        assessmentStageSure: '/admin/assess/AssessSure',
+        assessmentMemberList: '/admin/assess/AssessRecordList',
+        assessmentDetails: '/admin/assess/AssessDetail',
+        assessmentEdit: '/admin/assess/AssessRecordEdit',
+        assessmentContentList: '/admin/assess/AssessRuleList',
+        assessmentContentAdd: '/admin/assess/AssessRuleModify',
+        assessmentContentDel: '/admin/assess/AssessRuleDel'
+    },
+    system: {
+        weixin: '/admin/system/getWeixin',
+        weixinSet: '/admin/system/setWeixin',
+        message: '/admin/system/getSms',
+        messageSet: '/admin/system/setSms'
+    },
+    wages: {
+        wagesList: '/admin/salary/getSalaryPeriodList',
+        wagesAddList: '/admin/salary/addSalaryPeriod',
+        wagesStaffList: '/admin/salary/getSalaryRecordByPeriod',
+        downloadExcel: '/public/admin/salary/exportSalaryPeriod',
+        importExcel: '/admin/salary/importSalaryRecord',
+        fieldList: '/admin/salary/getFieldList',
+        fieldThisList: '/admin/salary/getSalaryPeriodDetail',
+        fieldDel: '/admin/salary/deleteField',
+        fieldEdit: '/admin/salary/setSalaryField',
+        PersonalDetails: '/admin/salary/getUserSalaryDetail',
+        PersonalEdit: '/admin/salary/editUserSalary'
+    },
+    // 项目管理
+    project: {
+        list: '/admin/project/list',
+        detail: '/admin/project/info',
+        modify: '/admin/project/modify',
+        del: '/admin/project/del',
+        complete: '/admin/project/complete',
+        userlist: '/admin/project/user',
+        adduser: '/admin/project/userModify',
+        userDel: '/admin/project/userDel',
+        workTime: '/admin/project/worktime',
+        resource: '/admin/project/resource',
+        resourceModify: '/admin/project/resourceModify',
+        resourceDel: '/admin/project/resourceDel',
+        missionlist: '/admin/project/mission',
+        missionModify: '/admin/project/missionModify',
+        missionDel: '/admin/project/missionDel',
+        explode: '/public/admin/project/missionExplode',
+        implode: '/admin/project/missionImplode',
+        reprogressDel: '/admin/project/missionDel'
+    }
+}
+
+export {apiAddress}

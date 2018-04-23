@@ -1,0 +1,12 @@
+.border-bottom{
+	border-bottom: 1px solid #ddd;
+	margin-top:5px;
+	margin-bottom: 10px
+}
+.page {
+    text-align: center;
+    margin-top: 50px;
+}
+.page > div{
+    display: inline-block;
+}
